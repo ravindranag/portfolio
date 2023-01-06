@@ -9,7 +9,7 @@ const Home = () => {
 			padding='32px'
 		>
 			<Typography>
-				Hi, I'm
+				Hi, I&#39;m
 			</Typography>
 			<Typography
 				variant='display.large.semiBold'
