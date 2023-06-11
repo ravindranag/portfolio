@@ -1,60 +1,59 @@
 'use client'
 
-import { ThemeProvider, createTheme } from "@mui/material"
+import { PaletteColor, ThemeProvider, createTheme } from "@mui/material"
 import { PropsWithChildren, useEffect } from "react"
 import getTypographyOptions from "./typography"
 import useAppThemeStore, { ThemeMode } from "@/stores/useAppThemeStore"
-
-
+import lightPalette from "./palette.light"
+import darkPalette from "./palette.dark"
+import componentOverrides from "./components"
 
 declare module "@mui/material" {
 	interface Palette {
-		onPrimary: Palette['primary']
 		primaryContainer: Palette['primary']
-		onPrimaryContainer: Palette['primary']
-
-		onSecondary: Palette['primary']
 		secondaryContainer: Palette['primary']
-		onSecondaryContainer: Palette['primary']
-
 		tertiary: Palette['primary']
-		onTertiary: Palette['primary']
 		tertiaryContainer: Palette['primary']
-		onTertiaryContainer: Palette['primary']
-
 		surface: Array<string>
 	}
 
 	interface PaletteOptions {
-		onPrimary?: PaletteOptions['primary']
 		primaryContainer?: PaletteOptions['primary']
-		onPrimaryContainer?: PaletteOptions['primary']
-
-		onSecondary?: PaletteOptions['primary']
 		secondaryContainer?: PaletteOptions['primary']
-		onSecondaryContainer?: PaletteOptions['primary']
-
 		tertiary?: PaletteOptions['primary']
-		onTertiary?: PaletteOptions['primary']
 		tertiaryContainer?: PaletteOptions['primary']
-		onTertiaryContainer?: PaletteOptions['primary']
-
-		surface?: Array<string>
+		surface?: Record<string, string>
 	}
 }
 
 const AppThemeProvider = ({children}: PropsWithChildren) => {
-	const [setThemeMode] = useAppThemeStore(state => [state.setThemeMode])
+	const [setThemeMode, themeMode] = useAppThemeStore(state => [state.setThemeMode, state.themeMode])
 
 	useEffect(() => {
+		console.log(themeMode)
 		const localThemeMode = localStorage.getItem('themeMode')
-		if(localThemeMode) {
+		if(localThemeMode === 'LIGHT' || localThemeMode === 'DARK') {
+			console.log('local', localThemeMode)
 			setThemeMode(localThemeMode as ThemeMode)
 		}
-	}, [setThemeMode])
+	}, [setThemeMode,themeMode])
 
 	const theme = createTheme({
-		typography: (palette) => getTypographyOptions(palette)
+		typography: (palette) => getTypographyOptions(palette),
+		palette: themeMode === 'LIGHT' ? lightPalette : darkPalette,
+		components: componentOverrides,
+		shape: {
+			borderRadius: 100
+		},
+		breakpoints: {
+			values: {
+				xs: 0,
+				sm: 600,
+				md: 1000,
+				lg: 1200,
+				xl: 1536
+			}
+		}
 	})
 
 	return (

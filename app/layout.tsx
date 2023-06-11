@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import React, { PropsWithChildren } from "react"
 import '../styles/globals.css'
 import AppThemeProvider from "@/theme/AppThemeProvider"
+import GlobalStyledBackground from "@/components/GlobalStyledBackground/GlobalStyledBackground"
 
 
 export const metadata: Metadata = {
@@ -14,7 +15,9 @@ const RootLayout = ({ children }: PropsWithChildren) => {
 		<html lang='en'>
 			<body>
 				<AppThemeProvider>
-					{children}
+					<GlobalStyledBackground>
+						{children}
+					</GlobalStyledBackground>
 				</AppThemeProvider>
 			</body>
 		</html>
