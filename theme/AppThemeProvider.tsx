@@ -15,6 +15,8 @@ declare module "@mui/material" {
 		tertiary: Palette['primary']
 		tertiaryContainer: Palette['primary']
 		surface: Array<string>
+		outline: Palette['divider']
+		outlineVariant: Palette['divider']
 	}
 
 	interface PaletteOptions {
@@ -23,6 +25,8 @@ declare module "@mui/material" {
 		tertiary?: PaletteOptions['primary']
 		tertiaryContainer?: PaletteOptions['primary']
 		surface?: Record<string, string>
+		outline?: PaletteOptions['divider']
+		outlineVariant?: PaletteOptions['divider']
 	}
 }
 
@@ -52,6 +56,11 @@ const AppThemeProvider = ({children}: PropsWithChildren) => {
 				md: 1000,
 				lg: 1200,
 				xl: 1536
+			}
+		},
+		mixins: {
+			toolbar: {
+				minHeight: 0
 			}
 		}
 	})

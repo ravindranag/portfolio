@@ -44,7 +44,10 @@ const lightPalette: PaletteOptions = {
 	text: {
 		primary: '#201A19',
 		secondary: '#53433F'
-	}
+	},
+	divider: '#85736E',
+	outline: '#85736E',
+	outlineVariant: '#D8C2BC'
 }
 
 export default lightPalette

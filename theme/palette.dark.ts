@@ -44,7 +44,10 @@ const darkPalette: PaletteOptions = {
 	text: {
 		primary: '#D0C4C1',
 		secondary: '#D8C2BC'
-	}
+	},
+	divider: '#A08C87',
+	outline: '#A08C87',
+	outlineVariant: '#53433F'
 }
 
 export default darkPalette

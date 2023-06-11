@@ -37,6 +37,8 @@ declare module "@mui/material/Typography" {
 		bodyLarge: true
 		bodyMedium: true
 		bodySmall: true
+
+		spaceGrotesk: true
 	}
 }
 
@@ -61,6 +63,8 @@ declare module "@mui/material/styles" {
 		bodyLarge: CSSProperties
 		bodyMedium: CSSProperties
 		bodySmall: CSSProperties
+
+		spaceGrotesk: CSSProperties
 	}
 	interface TypographyVariantsOptions {
 		displayLarge?: CSSProperties
@@ -82,6 +86,8 @@ declare module "@mui/material/styles" {
 		bodyLarge?: CSSProperties
 		bodyMedium?: CSSProperties
 		bodySmall?: CSSProperties
+
+		spaceGrotesk?: CSSProperties
 	}
 }
 
@@ -95,41 +101,47 @@ const getTypographyOptions = (palette: Palette): TypographyOptions => ({
 	fontWeightMedium: 500,
 	fontWeightBold: 600,
 	displayLarge: {
+		fontFamily: 'Righteous',
 		fontSize: '57px',
 		lineHeight: '64px',
 		letterSpacing: '-0.25px',
-		fontWeight: 600
+		fontWeight: 400
 	},
 	displayMedium: {
+		fontFamily: 'Righteous',
 		fontSize: '45px',
 		lineHeight: '52px',
 		letterSpacing: '0px',
-		fontWeight: 600
+		fontWeight: 400
 	},
 	displaySmall: {
+		fontFamily: 'Righteous',
 		fontSize: '36px',
 		lineHeight: '44px',
 		letterSpacing: '0px',
-		fontWeight: 600
+		fontWeight: 400
 	},
 
 	headlineLarge: {
+		fontFamily: 'Righteous',
 		fontSize: '32px',
 		lineHeight: '40px',
 		letterSpacing: '0px',
-		fontWeight: 600
+		fontWeight: 400
 	},
 	headlineMedium: {
+		fontFamily: 'Righteous',
 		fontSize: '28px',
 		lineHeight: '36px',
 		letterSpacing: '0px',
-		fontWeight: 600
+		fontWeight: 400
 	},
 	headlineSmall: {
+		fontFamily: 'Righteous',
 		fontSize: '24px',
 		lineHeight: '32px',
 		letterSpacing: '0px',
-		fontWeight: 600
+		fontWeight: 400
 	},
 
 	titleLarge: {
@@ -193,6 +205,12 @@ const getTypographyOptions = (palette: Palette): TypographyOptions => ({
 		lineHeight: '20px',
 		letterSpacing: '0.1px',
 		fontWeight: 500
+	},
+	spaceGrotesk: {
+		fontSize: 'inherit',
+		fontFamily: 'Space Grotesk',
+		fontWeight: 'inherit',
+		letterSpacing: 'inherit'
 	}
 })
 
