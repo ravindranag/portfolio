@@ -1,4 +1,4 @@
-import { Stack, Typography } from "@mui/material"
+import { Stack } from "@mui/material"
 import Intro from "./components/Intro"
 import Services from "./components/Services"
 import Projects from "./components/Projects"

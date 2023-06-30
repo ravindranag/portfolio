@@ -1,9 +1,8 @@
 import { Container, Stack, Typography } from "@mui/material"
-import { forwardRef } from "react"
 import Grid from "@mui/material/Unstable_Grid2/Grid2"
 
 type ServiceCardProps = {
-	title: string
+title: string
 	description: string
 }
 

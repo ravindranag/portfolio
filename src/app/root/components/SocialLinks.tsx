@@ -1,4 +1,4 @@
-import { IconButton, Stack } from "@mui/material"
+import { Stack } from "@mui/material"
 import GitHubIcon from "../../../icons/GitHub"
 import OutlinedIconButton from "../../../components/OutlinedIconButton"
 import DribbbleIcon from "../../../icons/Dribbble"

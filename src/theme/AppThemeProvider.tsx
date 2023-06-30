@@ -2,7 +2,7 @@ import { ThemeProvider, createTheme } from "@mui/material"
 import { PropsWithChildren } from "react"
 import typographyOptions from "./typography"
 import lightPalette from "./palette.light"
-import darkPalette from "./palette.dark"
+// import darkPalette from "./palette.dark"
 import componentOverrides from "./components"
 
 declare module "@mui/material/styles" {

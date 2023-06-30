@@ -1,4 +1,4 @@
-import { Container, IconButton, Stack, Typography } from "@mui/material"
+import { Container, Stack, Typography } from "@mui/material"
 import SocialLinks from "./SocialLinks"
 
 const Footer = () => {

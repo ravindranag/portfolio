@@ -1,9 +1,7 @@
 import { Box, Button, Container, Stack, Typography } from "@mui/material"
-import { forwardRef, useEffect, useRef } from "react"
 import SocialLinks from "../../root/components/SocialLinks"
-import { Link } from "react-router-dom"
 
-const Intro = forwardRef(() => {
+const Intro = () => {
 	return (
 		<Container 
 			maxWidth='md'
@@ -63,6 +61,6 @@ const Intro = forwardRef(() => {
 			</Stack>
 		</Container>
 	)
-})
+}
 
 export default Intro
