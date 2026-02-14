@@ -1,0 +1,2 @@
+# Format, lint, and organize imports of all files
+bunx biome check --write
