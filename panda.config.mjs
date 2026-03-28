@@ -13,7 +13,8 @@ export default defineConfig({
 	globalFontface: {
 		CabinetGrotesk: {
 			src: 'url(/fonts/CabinetGrotesk-Variable.woff2) format(woff2)',
-			fontStyle: 'normal'
+			fontStyle: 'normal',
+			fontDisplay: 'swap'
 		}
 	},
 
