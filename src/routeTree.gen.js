@@ -10,7 +10,13 @@
 
 import { Route as rootRouteImport } from "./routes/__root";
 import { Route as IndexRouteImport } from "./routes/index";
+import { Route as ProjectsRouteImport } from "./routes/projects";
 
+const ProjectsRoute = ProjectsRouteImport.update({
+	id: "/projects",
+	path: "/projects",
+	getParentRoute: () => rootRouteImport,
+});
 const IndexRoute = IndexRouteImport.update({
 	id: "/",
 	path: "/",
@@ -19,5 +25,6 @@ const IndexRoute = IndexRouteImport.update({
 
 const rootRouteChildren = {
 	IndexRoute: IndexRoute,
+	ProjectsRoute: ProjectsRoute,
 };
 export const routeTree = rootRouteImport._addFileChildren(rootRouteChildren);

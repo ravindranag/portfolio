@@ -5,7 +5,24 @@ import "./index.css";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen.js";
 
-const router = createRouter({ routeTree });
+const router = createRouter({
+	routeTree,
+	scrollRestoration: true,
+	defaultViewTransition: {
+		types: ({ fromLocation, toLocation }) => {
+			let direction = "none";
+
+			if (fromLocation) {
+				const fromIndex = fromLocation.state.__TSR_index;
+				const toIndex = toLocation.state.__TSR_index;
+
+				direction = fromIndex > toIndex ? "backward" : "forward";
+			}
+
+			return [`slide-${direction}`];
+		},
+	},
+});
 
 createRoot(document.getElementById("root")).render(
 	<StrictMode>
