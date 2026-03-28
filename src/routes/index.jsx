@@ -79,7 +79,7 @@ const experiences = [
 
 function RouteComponent() {
 	return (
-		<div
+		<main
 			className={container({
 				maxWidth: "4xl",
 				paddingInline: 0,
@@ -100,7 +100,11 @@ function RouteComponent() {
 									<h3 className={css({ fontSize: "lg", fontWeight: 500 })}>
 										{e.company}
 									</h3>
-									<Link to={e.link} target="_blank">
+									<Link
+										to={e.link}
+										target="_blank"
+										aria-label={`Link to ${e.company}`}
+									>
 										<LinkIcon
 											size={12}
 											className={css({
@@ -117,6 +121,8 @@ function RouteComponent() {
 										gap: 2,
 										fontSize: "sm",
 										color: "gray.600",
+										flexWrap: "wrap",
+										rowGap: 0,
 									})}
 								>
 									<p className={css({ color: "gray.600" })}>{e.title}</p>
@@ -145,6 +151,6 @@ function RouteComponent() {
 				<TriangleAlertIcon className={css({ color: "amber.500" })} />
 				<p>This website is a work in progress.</p>
 			</div>
-		</div>
+		</main>
 	);
 }
