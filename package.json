@@ -5,10 +5,10 @@
 	"type": "module",
 	"scripts": {
 		"prepare": "husky && panda codegen",
-		"dev": "vite",
-		"build": "vite build",
-		"lint": "eslint .",
-		"preview": "vite preview"
+		"dev": "next dev -p 4000",
+		"build": "next build",
+		"lint": "biome check --write",
+		"start": "next start"
 	},
 	"dependencies": {
 		"@react-three/drei": "^10.7.7",
@@ -16,8 +16,9 @@
 		"@tanstack/react-router": "^1.159.10",
 		"@tanstack/react-router-devtools": "^1.159.10",
 		"lucide-react": "^1.7.0",
-		"react": "^19.2.0",
-		"react-dom": "^19.2.0",
+		"next": "^16.2.4",
+		"react": "^19.2.5",
+		"react-dom": "^19.2.5",
 		"three": "^0.182.0"
 	},
 	"devDependencies": {

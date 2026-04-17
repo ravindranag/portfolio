@@ -1,12 +1,8 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
 import { LinkIcon, TriangleAlertIcon } from "lucide-react";
+import Link from "next/link";
 import { css } from "@/styled-system/css";
 import { container, hstack, vstack } from "@/styled-system/patterns";
 import Surface from "@/ui/Surface/Surface";
-
-export const Route = createFileRoute("/")({
-	component: RouteComponent,
-});
 
 const experiences = [
 	{
@@ -77,7 +73,7 @@ const experiences = [
 	},
 ];
 
-function RouteComponent() {
+export default function Page() {
 	return (
 		<main
 			className={container({
@@ -101,7 +97,7 @@ function RouteComponent() {
 										{e.company}
 									</h3>
 									<Link
-										to={e.link}
+										href={e.link}
 										target="_blank"
 										aria-label={`Link to ${e.company}`}
 									>
